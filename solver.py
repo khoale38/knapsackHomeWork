@@ -1,4 +1,5 @@
 from glob import glob
+from traceback import print_tb
 from ortools.algorithms import pywrapknapsack_solver
 import numpy as np
 import time
@@ -44,8 +45,13 @@ def main():
                 count =0
                 for item in kp:
                    
-      
-   
+                    if count<5:
+                        list5kpDir.append(rootFolder+child+"/"+R+"/"+str(kp)+"/"+item)
+                        count=count+1
+                    else:
+                        break
+  
+
                 
                 
 
