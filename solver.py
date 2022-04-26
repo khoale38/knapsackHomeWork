@@ -5,22 +5,22 @@ import numpy as np
 import time
 import os
 import glob
-foldername = "R01000/"
-filename = "s000"
-exportname = "json/"
-path = exportname+foldername
+
+exportname = "ouput/"
+path = exportname
 TIME_LIMIT = 10
 
 
-def createfolder():
-    isExist = os.path.exists(path)
+def createfolder(dir):
+    isExist = os.path.exists(path+dir)
     if not isExist:
-        os.makedirs(path)
+        os.makedirs(path+dir)
 
 
-def writeOutPut(amount, computed_value, total_weight, packed_items, packed_weights, runtime):
-    f = open(os.path.join(exportname, foldername + filename+'.json'), "w")
-    f.writelines(foldername+filename+"\n")
+def writeOutPut(folder,filename,amount, computed_value, total_weight, packed_items, packed_weights, runtime):
+  
+    f = open(os.path.join(folder,filename+'.json'), "w")
+    f.writelines(folder+filename+"\n")
     f.writelines('Time limit:'+str(TIME_LIMIT)+"\n")
     f.writelines('Amount of item :' + amount+"\n")
     f.writelines('Total value =' + str(computed_value)+"\n")
@@ -42,24 +42,25 @@ def main():
             R_dir = os.listdir(rootFolder+child+"/"+R)
             for kp in R_dir:
                 kp_dir=os.listdir(rootFolder+child+"/"+R+"/"+kp)
+                createfolder(rootFolder+child+"/"+R+"/"+kp)
                 count =0
                 for item in kp_dir:
                    
                     if count<5:
-                        list5kpDir.append(rootFolder+child+"/"+R+"/"+kp+"/"+item)
+                        run(rootFolder+child+"/"+R+"/"+kp+"/"+item,rootFolder+child+"/"+R+"/"+kp,item)
+                        # list5kpDir.append(rootFolder+child+"/"+R+"/"+kp+"/"+item)
                         count=count+1
                     else:
                         break
 
-    for i in list5kpDir:
-        run(i)
+
   
 
                 
                 
 
 
-def run(dir):
+def run(dir,folder,filename):
 
     # Create the solver.
     solver = pywrapknapsack_solver.KnapsackSolver(
@@ -90,7 +91,7 @@ def run(dir):
     packed_weights = []
     total_weight = 0
 
-    print(foldername+filename)
+    print(dir)
     print('Time limit:', TIME_LIMIT)
     print('Amount of item :', amount[0])
     print('Total value =', computed_value)
@@ -103,6 +104,8 @@ def run(dir):
     print('Packed items:', packed_items)
     print('Packed_weights:', packed_weights)
     print('Run time: ', endtime-starttime)
+
+    writeOutPut(folder,filename,amount[0],computed_value,total_weight,packed_items,packed_weights,(endtime-starttime))
 
 
 if __name__ == '__main__':
