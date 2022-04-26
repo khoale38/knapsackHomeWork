@@ -37,34 +37,37 @@ def main():
     parent_list = os.listdir(rootFolder)
 
     for child in parent_list:
-        child_list = os.listdir(rootFolder+child)
-        for R in child_list:
-            R_list = os.listdir(rootFolder+child+"/"+R)
-            for kp in R_list:
-                kp=os.listdir(rootFolder+child+"/"+R+"/"+kp)
+        child_dir = os.listdir(rootFolder+child)
+        for R in child_dir:
+            R_dir = os.listdir(rootFolder+child+"/"+R)
+            for kp in R_dir:
+                kp_dir=os.listdir(rootFolder+child+"/"+R+"/"+kp)
                 count =0
-                for item in kp:
+                for item in kp_dir:
                    
                     if count<5:
-                        list5kpDir.append(rootFolder+child+"/"+R+"/"+str(kp)+"/"+item)
+                        list5kpDir.append(rootFolder+child+"/"+R+"/"+kp+"/"+item)
                         count=count+1
                     else:
                         break
+
+    for i in list5kpDir:
+        run(i)
   
 
                 
                 
 
 
-def run(child):
+def run(dir):
 
     # Create the solver.
     solver = pywrapknapsack_solver.KnapsackSolver(
         pywrapknapsack_solver.KnapsackSolver.
         KNAPSACK_MULTIDIMENSION_BRANCH_AND_BOUND_SOLVER, 'KnapsackExample')
 
-    data = np.loadtxt(child, dtype=int, skiprows=3)
-    amount = np.loadtxt(child, dtype='str', delimiter='\n')
+    data = np.loadtxt(dir, dtype=int, skiprows=3)
+    amount = np.loadtxt(dir, dtype='str', delimiter='\n')
 
     values = [
 
