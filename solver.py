@@ -17,18 +17,17 @@ def createfolder(dir):
         os.makedirs(path+dir)
 
 
-#def writeOutPut(folder,filename,amount, computed_value, total_weight, packed_items, packed_weights, runtime):
-
-    
-    # f = open(os.path.join(exportname,folder+"/"+filename), "w")
-    # f.writelines(folder+filename+"\n")
-    # f.writelines('Time limit:'+str(TIME_LIMIT)+"\n")
-    # f.writelines('Amount of item :' + amount+"\n")
-    # f.writelines('Total value =' + str(computed_value)+"\n")
-    # f.writelines('Total weight:' + str(total_weight)+"\n")
-    # f.writelines('Packed items:' + str(packed_items)+"\n")
-    # f.writelines('Packed_weights:' + str(packed_weights)+"\n")
-    # f.writelines('Run time: '+str(runtime)+"\n")
+def writeOutPut(folder,filename,amount, computed_value, total_weight, packed_items, packed_weights, runtime):
+    createfolder(folder)
+    f = open(os.path.join(exportname,folder+"/"+filename[0:4]+".json"), "w")
+    f.writelines(folder+"/"+filename+"\n")
+    f.writelines('Time limit:'+str(TIME_LIMIT)+"\n")
+    f.writelines('Amount of item :' + amount+"\n")
+    f.writelines('Total value =' + str(computed_value)+"\n")
+    f.writelines('Total weight:' + str(total_weight)+"\n")
+    f.writelines('Packed items:' + str(packed_items)+"\n")
+    f.writelines('Packed_weights:' + str(packed_weights)+"\n")
+    f.writelines('Run time: '+str(runtime)+"\n")
 
 
 def main():
@@ -43,11 +42,12 @@ def main():
             R_dir = os.listdir(rootFolder+child+"/"+R)
             for kp in R_dir:
                 kp_dir=os.listdir(rootFolder+child+"/"+R+"/"+kp)
-                createfolder(rootFolder+child+"/"+R+"/"+kp)
+                
                 count =0
                 for item in kp_dir:
                    
                     if count<5:
+                       
                         run(rootFolder+child+"/"+R+"/"+kp+"/"+item,rootFolder+child+"/"+R+"/"+kp,item)
                         # list5kpDir.append(rootFolder+child+"/"+R+"/"+kp+"/"+item)
                         count=count+1
@@ -106,7 +106,7 @@ def run(dir,folder,filename):
     # print('Packed_weights:', packed_weights)
     # print('Run time: ', endtime-starttime)
 
-    #writeOutPut(folder,filename,amount[0],computed_value,total_weight,packed_items,packed_weights,(endtime-starttime))
+    writeOutPut(folder,filename,amount[0],computed_value,total_weight,packed_items,packed_weights,(endtime-starttime))
 
 
 if __name__ == '__main__':
