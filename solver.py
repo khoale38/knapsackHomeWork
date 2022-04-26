@@ -17,17 +17,18 @@ def createfolder(dir):
         os.makedirs(path+dir)
 
 
-def writeOutPut(folder,filename,amount, computed_value, total_weight, packed_items, packed_weights, runtime):
-  
-    f = open(os.path.join(folder,filename+'.json'), "w")
-    f.writelines(folder+filename+"\n")
-    f.writelines('Time limit:'+str(TIME_LIMIT)+"\n")
-    f.writelines('Amount of item :' + amount+"\n")
-    f.writelines('Total value =' + str(computed_value)+"\n")
-    f.writelines('Total weight:' + str(total_weight)+"\n")
-    f.writelines('Packed items:' + str(packed_items)+"\n")
-    f.writelines('Packed_weights:' + str(packed_weights)+"\n")
-    f.writelines('Run time: '+str(runtime)+"\n")
+#def writeOutPut(folder,filename,amount, computed_value, total_weight, packed_items, packed_weights, runtime):
+
+    
+    # f = open(os.path.join(exportname,folder+"/"+filename), "w")
+    # f.writelines(folder+filename+"\n")
+    # f.writelines('Time limit:'+str(TIME_LIMIT)+"\n")
+    # f.writelines('Amount of item :' + amount+"\n")
+    # f.writelines('Total value =' + str(computed_value)+"\n")
+    # f.writelines('Total weight:' + str(total_weight)+"\n")
+    # f.writelines('Packed items:' + str(packed_items)+"\n")
+    # f.writelines('Packed_weights:' + str(packed_weights)+"\n")
+    # f.writelines('Run time: '+str(runtime)+"\n")
 
 
 def main():
@@ -91,21 +92,21 @@ def run(dir,folder,filename):
     packed_weights = []
     total_weight = 0
 
-    print(dir)
-    print('Time limit:', TIME_LIMIT)
-    print('Amount of item :', amount[0])
-    print('Total value =', computed_value)
+    # print(dir)
+    # print('Time limit:', TIME_LIMIT)
+    # print('Amount of item :', amount[0])
+    # print('Total value =', computed_value)
     for i in range(len(values)):
         if solver.BestSolutionContains(i):
             packed_items.append(i)
             packed_weights.append(weights[0][i])
             total_weight += weights[0][i]
-    print('Total weight:', total_weight)
-    print('Packed items:', packed_items)
-    print('Packed_weights:', packed_weights)
-    print('Run time: ', endtime-starttime)
+    # print('Total weight:', total_weight)
+    # print('Packed items:', packed_items)
+    # print('Packed_weights:', packed_weights)
+    # print('Run time: ', endtime-starttime)
 
-    writeOutPut(folder,filename,amount[0],computed_value,total_weight,packed_items,packed_weights,(endtime-starttime))
+    #writeOutPut(folder,filename,amount[0],computed_value,total_weight,packed_items,packed_weights,(endtime-starttime))
 
 
 if __name__ == '__main__':
