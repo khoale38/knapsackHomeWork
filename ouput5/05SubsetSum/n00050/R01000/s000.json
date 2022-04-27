@@ -1,0 +1,12 @@
+{
+"fileName":"05SubsetSum/n00050/R01000/s000.kp",
+"timeLimit": 10,
+"amountOfItem": 50,
+"capacities": 14239,
+"totalValue": 14239,
+"totalWeight": 14239,
+"packedItems": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 30, 35],
+"packedWeights": [758, 421, 259, 512, 405, 784, 304, 477, 584, 909, 505, 282, 756, 619, 251, 910, 983, 811, 903, 730, 899, 684, 478, 15],
+"runTime": 0.0,
+"Optimal": true
+}

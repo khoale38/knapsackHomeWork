@@ -1,0 +1,12 @@
+{
+"fileName":"09SpannerStronglyCorrelated/n00100/R01000/s000.kp",
+"timeLimit": 10,
+"amountOfItem": 100,
+"capacities": 20956,
+"totalValue": 9044,
+"totalWeight": 20944,
+"packedItems": [0, 1, 2, 6, 11, 16, 17, 19, 20, 24, 25, 31, 32, 33, 34, 36, 40, 41, 47, 48],
+"packedWeights": [880, 1056, 1408, 1232, 880, 1056, 1408, 176, 1584, 1584, 176, 1056, 1056, 1056, 352, 880, 1056, 1408, 1408, 1232],
+"runTime": 10.006072521209717,
+"Optimal": false
+}

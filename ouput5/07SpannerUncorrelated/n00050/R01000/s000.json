@@ -1,0 +1,12 @@
+{
+"fileName":"07SpannerUncorrelated/n00050/R01000/s000.kp",
+"timeLimit": 10,
+"amountOfItem": 50,
+"capacities": 4569,
+"totalValue": 2280,
+"totalWeight": 4560,
+"packedItems": [0, 1, 5, 10, 15, 16, 18, 19, 23, 24],
+"packedWeights": [456, 608, 532, 380, 456, 608, 76, 684, 684, 76],
+"runTime": 0.06396126747131348,
+"Optimal": true
+}

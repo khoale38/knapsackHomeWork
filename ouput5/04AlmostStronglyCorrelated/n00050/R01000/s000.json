@@ -1,0 +1,12 @@
+{
+"fileName":"04AlmostStronglyCorrelated/n00050/R01000/s000.kp",
+"timeLimit": 10,
+"amountOfItem": 50,
+"capacities": 14239,
+"totalValue": 12740,
+"totalWeight": 14238,
+"packedItems": [1, 6, 16, 17, 18, 19, 21, 22, 28, 29, 33, 42, 45, 47, 49],
+"packedWeights": [858, 882, 1010, 1082, 911, 1002, 828, 1000, 1016, 1069, 905, 968, 973, 666, 1068],
+"runTime": 0.22486209869384766,
+"Optimal": true
+}
