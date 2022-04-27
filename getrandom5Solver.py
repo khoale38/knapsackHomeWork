@@ -22,6 +22,7 @@ def writeOutPut(folder, filename, amount, computed_value, total_weight, packed_i
     createfolder(folder)
     f = open(os.path.join(exportname, folder+"/"+filename[0:4]+".json"), "w")
     #f.writelines('"File name":'+folder+"/"+filename+",\n")
+    f.writelines("{"+",\n")
     f.writelines('"Time limit": '+str(TIME_LIMIT)+",\n")
     f.writelines('"Amount of item": ' + amount+",\n")
     f.writelines('"Total value": ' + str(computed_value)+",\n")
@@ -33,6 +34,7 @@ def writeOutPut(folder, filename, amount, computed_value, total_weight, packed_i
         f.writelines('"Optimal": true'+"\n")
     else:
         f.writelines('"Optimal": false'+"\n")
+    f.writelines("}"+",\n")
 
 
 def main():
