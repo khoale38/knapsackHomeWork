@@ -20,19 +20,19 @@ def createfolder(dir):
 
 def writeOutPut(folder, filename, amount, computed_value, total_weight, packed_items, packed_weights, runtime):
     createfolder(folder)
-    f = open(os.path.join(exportname, folder+"/"+filename[0:4]+".txt"), "w")
-    f.writelines(folder+"/"+filename+"\n")
-    f.writelines('Time limit:'+str(TIME_LIMIT)+"\n")
-    f.writelines('Amount of item :' + amount+"\n")
-    f.writelines('Total value =' + str(computed_value)+"\n")
-    f.writelines('Total weight:' + str(total_weight)+"\n")
-    f.writelines('Packed items:' + str(packed_items)+"\n")
-    f.writelines('Packed_weights:' + str(packed_weights)+"\n")
-    f.writelines('Run time: '+str(runtime)+"\n")
+    f = open(os.path.join(exportname, folder+"/"+filename[0:4]+".json"), "w")
+    #f.writelines('"File name":'+folder+"/"+filename+",\n")
+    f.writelines('"Time limit": '+str(TIME_LIMIT)+",\n")
+    f.writelines('"Amount of item": ' + amount+",\n")
+    f.writelines('"Total value": ' + str(computed_value)+",\n")
+    f.writelines('"Total weight": ' + str(total_weight)+",\n")
+    f.writelines('"Packed items": ' + str(packed_items)+",\n")
+    f.writelines('"Packed_weights": ' + str(packed_weights)+",\n")
+    f.writelines('"Run time": '+str(runtime)+",\n")
     if runtime < TIME_LIMIT:
-        f.writelines('This is optimal solver'+"\n")
+        f.writelines('"Optimal": true'+"\n")
     else:
-        f.writelines('This is not optimal solver'+"\n")
+        f.writelines('"Optimal": false'+"\n")
 
 
 def main():
