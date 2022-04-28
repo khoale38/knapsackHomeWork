@@ -1,5 +1,5 @@
 {
-"fileName":"12Circle/n00100/R01000/s000.kp",
+"name":"12Circle/n00100/R01000/s000.kp",
 "timeLimit": 10,
 "amountOfItem": 100,
 "capacities": 29017,
@@ -7,6 +7,6 @@
 "totalWeight": 29011,
 "packedItems": [15, 40, 46, 48, 52, 53, 69],
 "packedWeights": [5288, 42, 4045, 5036, 1706, 6763, 6131],
-"runTime": 3.066551923751831,
+"runTime": 2.401963233947754,
 "Optimal": true
 }

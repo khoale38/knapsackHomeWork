@@ -1,5 +1,5 @@
 {
-"fileName":"01WeaklyCorrelated/n00050/R01000/s000.kp",
+"name":"01WeaklyCorrelated/n00050/R01000/s000.kp",
 "timeLimit": 10,
 "amountOfItem": 50,
 "capacities": 14239,
@@ -7,6 +7,6 @@
 "totalWeight": 14232,
 "packedItems": [1, 2, 3, 4, 6, 7, 9, 11, 13, 15, 16, 17, 18, 19, 20, 21, 24, 25, 33, 39, 41, 42, 47, 49],
 "packedWeights": [748, 337, 223, 514, 705, 314, 594, 513, 777, 240, 929, 960, 826, 861, 249, 667, 468, 19, 784, 687, 510, 858, 484, 965],
-"runTime": 0.0,
+"runTime": 0.0010344982147216797,
 "Optimal": true
 }
