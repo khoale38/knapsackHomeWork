@@ -5,10 +5,9 @@ import pandas
 
 
 def main():
-    dirname = Path(os.path.dirname(__file__))
-    result_path = dirname.joinpath("output5")
+   
 
-    csv = {
+    excel = {
         "name": [],
         "amountOfItem": [],
         "capacities": [],
@@ -18,12 +17,12 @@ def main():
     }
 
     def appendToCsv(data):
-        csv["name"].append(data["name"])
-        csv["amountOfItem"].append(data["amountOfItem"])
-        csv["capacities"].append(data["capacities"])
-        csv["totalWeight"].append(data["totalWeight"])
-        csv["runTime"].append(data["runTime"])
-        csv["Optimal"].append(data["Optimal"])
+        excel["name"].append(data["name"])
+        excel["amountOfItem"].append(data["amountOfItem"])
+        excel["capacities"].append(data["capacities"])
+        excel["totalWeight"].append(data["totalWeight"])
+        excel["runTime"].append(data["runTime"])
+        excel["Optimal"].append(data["Optimal"])
 
     for root, dirs, files in os.walk(".", topdown=False):
         for file in files:
@@ -35,8 +34,8 @@ def main():
 
     i = 1
     df = pandas.DataFrame.from_dict(
-        {'name': csv["name"], 'amountOfItem': csv["amountOfItem"], 'capacities': csv["capacities"],'totalWeight':csv["totalWeight"]
-        ,'runTime':csv["runTime"],'Optimal':csv["Optimal"]})
+        {'name': excel["name"], 'amountOfItem': excel["amountOfItem"], 'capacities': excel["capacities"],'totalWeight':excel["totalWeight"]
+        ,'runTime':excel["runTime"],'Optimal':excel["Optimal"]})
     df.to_excel('test1.xlsx', header=True, index=False)
 
 
