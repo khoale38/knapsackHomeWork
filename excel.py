@@ -32,7 +32,7 @@ def main():
                     data = json.load(js)
                     appendToExcel(data)
 
-    i = 1
+
     df = pandas.DataFrame.from_dict(
         {'name': excel["name"], 'amountOfItem': excel["amountOfItem"], 'capacities': excel["capacities"],'totalWeight':excel["totalWeight"]
         ,'runTime':excel["runTime"],'Optimal':excel["Optimal"]})
