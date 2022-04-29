@@ -16,7 +16,7 @@ def main():
         "Optimal": [],
     }
 
-    def appendToCsv(data):
+    def appendToExcel(data):
         excel["name"].append(data["name"])
         excel["amountOfItem"].append(data["amountOfItem"])
         excel["capacities"].append(data["capacities"])
@@ -30,7 +30,7 @@ def main():
                 file_path = os.path.join(root, file)
                 with open(file_path, "r") as js:
                     data = json.load(js)
-                    appendToCsv(data)
+                    appendToExcel(data)
 
     i = 1
     df = pandas.DataFrame.from_dict(
